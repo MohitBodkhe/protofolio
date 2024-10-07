@@ -13,13 +13,14 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <header class="header">
         <div class="container">
-        
             <div class="header-content">
                 <h4 class="header-subtitle left-animation" >Hello, I am</h4>
                 <h1 class="header-title ">Mohit Bodkhe</h1>
                 <h6 class="header-mono right-animation"  >Software Enginner | Full Stack Developer</h6>
-                <button class="btn btn-primary btn-rounded  btn-animation"><i class="ti-printer pr-2"></i>Print Resume</button>
-            </div>
+                <button class="btn btn-primary btn-rounded btn-animation" onclick="printResume()">
+                  <i class="ti-printer pr-2"></i>Print Resume
+                </button>
+           </div>
         </div>
     </header>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
@@ -133,15 +134,98 @@
                                 <span class="line"></span>  
                             </div>
                         </div>
+                        
                         <div class="card-body">
-                            <h6 class="title text-danger">Bestpeers InfoSystem Pvt. Ltd</h6>
-                            <p style="font-size: 16px; color: rgb(48, 43, 43);">April 2023 - March 2024</p>
-                            <P>Junior Software Engineer</P>
-                           <P class="subtitle"> ◦ Leveraged expertise in Core Java, Ruby,  React.js, HTML, CSS, JavaScript, and TypeScript to actively contribute to both frontend and backend development projects.</P>
-                           <P class="subtitle"> ◦ Demonstrated a commitment to code optimization, ensuring efficient and performant solutions.</P>
-                           <P class="subtitle"> ◦ Effective communication skills demonstrated through daily interactions with team members, providing updates on progress and collaborating on problem-solving.</P>
-                           <P class="subtitle"> ◦ Applied knowledge of frameworks such as Spring Boot, React.js, Bootstrap, and Ruby on Rails to enhance backend development capabilities, thereby contributing to a comprehensive skill set in full-stack web development.</P>
+                            <div style="margin-bottom: 22px;">
+                                <h6 class="title text-danger">CrewScale</h6>
+                                <p style="font-size: 16px; color: rgb(48, 43, 43);">September 2024 - Present</p>
+                                <p>SDE 2</p>
+
+                                <div id="moreInfo1" class="more-info" style="display: none;">
+                                    <p class="subtitle">
+                                        ◦ Designed and improved microservices architecture using Spring Boot and Node.js, Next.js to Enhanced system
+performance and scalability by decomposing monolithic applications into smaller, manageable services.
+                                    </p>
+                                    <p class="subtitle">
+                                        ◦ Architected a REST API solution incorporating Material UI for an enhanced user interface, improving data
+                                        visualization and interaction, which contributed to a 20% increase in user satisfaction within the application.
+                                    </p>
+                                </div>
+
+                                <button class="btn btn-primary" id="toggleButton1" onclick="toggleReadMore('moreInfo1', 'toggleButton1')">Read More</button>
+                            </div>
+                            <div style="margin-bottom: 22px;">
+                                <h6 class="title text-danger">Codecaffine Technologies, Indore</h6>
+                                <p style="font-size: 16px; color: rgb(48, 43, 43);">April 2023 - September 2024</p>
+                                <p>Associate Software Engineer</p>
+
+                                <div id="moreInfo2" class="more-info" style="display: none;">
+                                    <p class="subtitle">
+                                        ◦ Integrated GraphQL API endpoints with Apollo Client, which streamlined data retrieval and optimized state
+                                        management, resulting in a 30% reduction in data fetching time and a 25% improvement in frontend performance.
+                                    </p>
+                                    <p class="subtitle">
+                                        ◦ Architected a REST API solution incorporating Material UI for an enhanced user interface, improving data
+                                        visualization and interaction, which contributed to a 20% increase in user satisfaction within the application.
+                                    </p>
+                                </div>
+
+                                <button class="btn btn-primary" id="toggleButton2" onclick="toggleReadMore('moreInfo2', 'toggleButton2')">Read More</button>
+                            </div>
+
+                            <div>
+                                <h6 class="title text-danger">Bestpeers InfoSystem Pvt. Ltd</h6>
+                                <p style="font-size: 16px; color: rgb(48, 43, 43);">April 2023 - March 2024</p>
+                                <p>Junior Software Engineer</p>
+
+                                <div id="moreInfo3" class="more-info" style="display: none;">
+                                    <p class="subtitle">
+                                        ◦ Engineered a full-stack application managing 500+ customer profiles with advanced smart filters to match skills and
+                                        experience, streamlining resource allocation and optimizing workforce management.
+                                    </p>
+                                    <p class="subtitle">
+                                        ◦ Ensured secure access through Google authentication with 2FA and reinforced security measures with API key-based
+                                        authentication and JWT tokens for the application’s APIs.
+                                    </p>
+                                </div>
+
+                                <button class="btn btn-primary" id="toggleButton3" onclick="toggleReadMore('moreInfo3', 'toggleButton3')">Read More</button>
+                            </div>
                         </div>
+
+                    <script>
+                        function toggleReadMore(moreInfoId, buttonId) {
+                            const moreInfo = document.getElementById(moreInfoId);
+                            const button = document.getElementById(buttonId);
+
+                            // Hide all other more-info sections
+                            const allMoreInfo = document.querySelectorAll('.more-info');
+                            allMoreInfo.forEach(info => {
+                                if (info.id !== moreInfoId) {
+                                    info.style.display = "none";
+                                }
+                            });
+
+                            // Toggle the clicked more-info section
+                            if (moreInfo.style.display === "none") {
+                                moreInfo.style.display = "block";  // Show additional info
+                                button.textContent = "Read Less";  // Change button text to "Read Less"
+                            } else {
+                                moreInfo.style.display = "none";    // Hide additional info
+                                button.textContent = "Read More";   // Change button text back to "Read More"
+                            }
+
+                            // Reset other buttons to "Read More"
+                            const allButtons = document.querySelectorAll('.btn-primary');
+                            allButtons.forEach(btn => {
+                                if (btn.id !== buttonId) {
+                                    btn.textContent = "Read More";
+                                }
+                            });
+                        }
+                    </script>
+
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -258,7 +342,7 @@
                             <div class="m-auto"><i class="ti-layers-alt icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">2+</h1>
+                            <h1 class="text-danger font-weight-bold font40">5+</h1>
                             <p class="text-light mb-1">Project Finished</p>
                         </div>
                     </div>
@@ -269,7 +353,7 @@
                             <div class="m-auto"><i class="ti-face-smile icon-xl"></i></div>
                         </div>
                         <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">2+</h1>
+                            <h1 class="text-danger font-weight-bold font40">4+</h1>
                             <p class="text-light mb-1">Happy Clients</p>
                         </div>
                     </div>
@@ -382,7 +466,7 @@
 
                 <div class="blog-card">
                     <div class="img-holder">
-                        <img src="assets/imgs/blog1.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                        <img src="assets/imgs/temasek.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                     </div>
                     <div class="content-holder">
                         <h6 class="title">TemaSek (Owned by the Singapore government )</h6>                       
@@ -396,7 +480,7 @@
 
                 <div class="blog-card">
                     <div class="img-holder">
-                        <img src="assets/imgs/blog1.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                        <img src="assets/imgs/mystile.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                     </div>
                     <div class="content-holder">
                         <h6 class="title">Myestile</h6>                       
@@ -425,7 +509,7 @@
                 
                 <div class="blog-card">
                     <div class="img-holder">
-                        <img src="assets/imgs/blog2.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                        <img src="assets/imgs/moviebuzz.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                     </div>
                     <div class="content-holder">
                         <h6 class="title">MoiveBuzz</h6>
@@ -563,6 +647,12 @@
 
     <!-- Isotope  -->
     <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+    <script>
+      function printResume() {
+      window.location.href = 'https://drive.google.com/uc?export=download&id=12EfaFEExCzxTjvdLEVtBthqr2QVP4PHp';
+
+    }
+    </script> 
     
  
     <!-- mohit js -->

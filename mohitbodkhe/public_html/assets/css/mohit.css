@@ -44,6 +44,7 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-padding-top: 100px;
 }
 
 article,
@@ -11663,7 +11664,7 @@ p {
 
 .blog-card:hover {
   transform: scale(1.1);
-  transition: transform 0.4s;
+  transition: transform 0.6s;
 }
 
 .blog-card .img-holder {
@@ -12113,7 +12114,7 @@ pre .code {
   }
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(3px);
   }
 }
 
