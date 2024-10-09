@@ -68,8 +68,12 @@
                 <h3 class="font-weight-light">Who am I ?</h3>
                 <!-- <span class="line mb-5"></span> -->
                 <h5 class="mb-3">A Software Developer Located In Our Lovely Earth</h5>
-                <p class="mt-20">Passionate and driven software engineer with a Bachelor of Technology in Computer Science Engineering from Chameli Devi Group Of Institute, Indore. Skilled in frontend and backend development, with proficiency in languages such as Core Java and Ruby, and frameworks including Spring Boot, React, and Rails. Experienced in contributing to diverse projects, including Myestile, a hybrid e-commerce and social media platform. Proven track record of delivering high-quality solutions, optimizing code for performance, and collaborating effectively within multidisciplinary teams. Committed to continuous learning and professional growth, with achievements including a 5-star rating in problem-solving on HackerRank and certification in Java training. Ready to leverage my skills and knowledge to actively contribute to the success of organizations while advancing my career in software development.</p>
-                <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
+                <p class="mt-20">As a passionate Full Stack Developer, I thrive on crafting innovative solutions and pushing the boundaries of what's possible in software development. My dedication to continuous learning and growth drives me to constantly seek out new technologies and techniques, enhancing my skill set and staying at the forefront of the industry.
+
+I am committed to delivering high-quality software products with a keen focus on efficiency, performance, and user experience. I believe in the power of collaboration and effective communication, which are essential in driving success in any software development project.
+
+Enthusiastic about making a meaningful impact through technology, I strive to contribute to the advancement of the industry, ensuring that my work not only meets current demands but also sets new standards for the future.</p>
+                <button class="btn btn-outline-danger" onclick="printResume()"><i class="icon-down-circled2 "></i>Download My CV</button>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>
@@ -143,12 +147,12 @@
 
                                 <div id="moreInfo1" class="more-info" style="display: none;">
                                     <p class="subtitle">
-                                        ◦ Designed and improved microservices architecture using Spring Boot and Node.js, Next.js to Enhanced system
-performance and scalability by decomposing monolithic applications into smaller, manageable services.
+                                        ◦ Developed a hybrid e-commerce and social media platform, boosting user engagement by 40% . Enabled seamless
+posting, buying, and selling of outfits in a community-driven environment.
                                     </p>
                                     <p class="subtitle">
-                                        ◦ Architected a REST API solution incorporating Material UI for an enhanced user interface, improving data
-                                        visualization and interaction, which contributed to a 20% increase in user satisfaction within the application.
+                                        ◦ Collaborated with cross-functional teams to deliver 15+ features, incorporating MUI (Material-UI) design
+principles, bug fixes, and improvements, meeting project deadlines consistently.
                                     </p>
                                 </div>
 
@@ -455,9 +459,14 @@ performance and scalability by decomposing monolithic applications into smaller,
     <section class="section bg-dark py-5">
         <div class="container text-center">
             <h2 class="text-light mb-5 font-weight-normal">I Am Available For Full Time</h2>
-            <button class="btn bg-primary w-lg" >Hire me</button>
+            <button class="btn bg-primary w-lg" onclick="redirectToGmail()" >Hire me</button>
         </div>
     </section>
+    <script>
+function redirectToGmail() {
+    window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=mohitbodkhe2478@gmail.com";
+}
+</script>
 
     <section class="section-bottom" id="projects">
         <div class="container">
@@ -650,8 +659,16 @@ performance and scalability by decomposing monolithic applications into smaller,
     <script>
       function printResume() {
       window.location.href = 'https://drive.google.com/uc?export=download&id=12EfaFEExCzxTjvdLEVtBthqr2QVP4PHp';
+      const downloadBtn = document.getElementById('download-btn');
 
-    }
+    downloadBtn.blur();
+
+    downloadBtn.classList.add('btn-disabled');
+        
+    setTimeout(() => {
+        downloadBtn.classList.remove('btn-disabled');
+    }, 3000);  
+        }
     </script> 
     
  
